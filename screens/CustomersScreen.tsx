@@ -6,7 +6,7 @@ const CustomersScreen = () => {
     const tw = useTailwind()
     return (
         <SafeAreaView>
-            <Text style={tw('text-red-500')}>Customers !!</Text>
+            <Text style={tw('text-red-500')}>Customers 2!!</Text>
         </SafeAreaView>
 
     )
