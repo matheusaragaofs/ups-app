@@ -11,7 +11,7 @@ query GetCustomers {
     }
 }`
 
-const GET_ORDERS = gql`
+export const GET_ORDERS = gql`
   query GetOrders   {
     getOrders {
       value {
