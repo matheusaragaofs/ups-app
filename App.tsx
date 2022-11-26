@@ -6,7 +6,10 @@ import utilities from './tailwind.json';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:5001/api/bald-woodpecker',
+  uri: 'https://lakeelmo.stepzen.net/api/bald-woodpecker/__graphql',
+  headers: {
+    Authorization: "APIKey lakeelmo::stepzen.net+1000::a5323b3aa4f3b1220872c80f9a747707491bd2c7ed29548e9bd0b94065209c1b" 
+  },
   cache: new InMemoryCache(),
 });
 
