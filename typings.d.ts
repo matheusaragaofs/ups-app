@@ -13,7 +13,7 @@ type Order= {
     createdAt: string;
     shippingCost: number;
     trackingId: string;
-    trackingItems: TrackingItem;
+    trackingItems: TrackingItems;
     Lat: number;
     Lng: number;
     Address: string
@@ -26,6 +26,12 @@ type Item = {
     name: string;
     price: number;
     quantity: number
+}
+
+type TrackingItems = {
+    customer: Customer
+    customer_id: string;
+    items: Item[]
 }
 
 type OrderResponse = {
