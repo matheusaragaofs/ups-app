@@ -16,17 +16,17 @@ const CustomerCard = ({ userId, name, email }: Props) => {
     const tw = useTailwind()
     const navigation = useNavigation<CustomerScreenNavigationProps>()
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('MyModal', { name, userId })}>
             <Card containerStyle={tw('p-5 rounded-lg')}>
                 <View>
-                    <View  style={tw("flex-row justify-between")}>
+                    <View style={tw("flex-row justify-between")}>
                         <View>
                             <Text style={tw('text-2xl font-bold')}>{name}</Text>
                             <Text style={[tw('text-sm'), { color: "#59c1cc" }]}>ID:{userId}</Text>
                         </View>
                         <View style={tw('flex-row items-center justify-end')}>
                             <Text
-                            style={{color:"#59c1cc"}}
+                                style={{ color: "#59c1cc" }}
                             >{loading ? "loading..." : `${orders.length} x`}</Text>
                             <Icon
                                 style={tw('mb-5 ml-auto')}
