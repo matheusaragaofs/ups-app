@@ -34,10 +34,6 @@
   height: 16rem
 }
 
-.h-32 {
-  height: 8rem
-}
-
 .w-full {
   width: 100%
 }
@@ -70,9 +66,4 @@
 
 .capitalize {
   text-transform: capitalize
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity))
 }
