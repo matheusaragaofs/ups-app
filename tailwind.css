@@ -119,6 +119,10 @@
   padding-bottom: 1.25rem
 }
 
+.pb-5 {
+  padding-bottom: 1.25rem
+}
+
 .pt-5 {
   padding-top: 1.25rem
 }
@@ -141,11 +145,6 @@
   line-height: 1.25rem
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem
@@ -153,6 +152,11 @@
 
 .text-lg {
   font-size: 1.125rem;
+  line-height: 1.75rem
+}
+
+.text-xl {
+  font-size: 1.25rem;
   line-height: 1.75rem
 }
 
