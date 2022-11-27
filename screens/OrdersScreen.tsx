@@ -9,6 +9,7 @@ import useOrders from '../hooks/useOrders'
 import { ScrollView, ActivityIndicator } from 'react-native'
 import { Button, Image } from '@rneui/themed'
 import { useTailwind } from 'tailwind-rn/dist'
+import OrderCard from '../components/OrderCard'
 
 type Props = {
 
@@ -36,20 +37,29 @@ const OrdersScreen = () => {
   }, [])
 
   return (
-    <ScrollView style={{backgroundColor: "#eb6a7c"}}>
+    <ScrollView style={{ backgroundColor: "#eb6a7c" }}>
       <Image
         source={{ uri: 'https:links.papareact.com/m51' }}
         containerStyle={tw('w-full h-64')}
-        PlaceholderContent={<ActivityIndicator/>}
+        PlaceholderContent={<ActivityIndicator />}
       />
       <View>
-        <Button 
-        color='pink'
-        titleStyle={{color:"gray", fontWeight:'400'}}
-        style={tw("py-2 px-5")}
-        onPress={()=> setAscending(!ascending)}>
+        <Button
+          color='pink'
+          titleStyle={{ color: "gray", fontWeight: '400' }}
+          style={tw("py-2 px-5")}
+          onPress={() => setAscending(!ascending)}>
           {ascending ? "Showing: Oldest First" : "Showing: Most Recent First"}
         </Button>
+        {orders.sort((a, b) => {
+          if (ascending) {
+            return new Date(a.createdAt) > new Date(b.createdAt) ? 1 : -1
+          } else {
+            return new Date(a.createdAt) > new Date(b.createdAt) ? -1 : 1
+          }
+        }).map(order => (
+          <OrderCard key={order.trackingId} order={order}/>
+        ))}
       </View>
     </ScrollView>
   )
