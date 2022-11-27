@@ -22,7 +22,7 @@ export type OrdersScreenNavigationProps = CompositeNavigationProp<
 
 const OrdersScreen = () => {
   const navigation = useNavigation<OrdersScreenNavigationProps>()
-  const { loading, error, orders } = useOrders()
+  const { orders } = useOrders()
   const [ascending, setAscending] = useState<boolean>(false)
   const tw = useTailwind()
   useLayoutEffect(() => {
@@ -34,7 +34,7 @@ const OrdersScreen = () => {
         </Text>
       )
     })
-  }, [])
+  }, [navigation, orders])
 
   return (
     <ScrollView style={{ backgroundColor: "#eb6a7c" }}>

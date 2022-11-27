@@ -22,7 +22,7 @@ const ModalScreen = () => {
     const tw = useTailwind()
     const navigation = useNavigation<ModalScreenNavigationProps>()
     const { params: { name, userId } } = useRoute<ModalScreenRouteProp>()
-    const { orders, loading, error } = useCustomerOrders(userId)
+    const { orders } = useCustomerOrders(userId)
     return (
         <View>
             <TouchableOpacity

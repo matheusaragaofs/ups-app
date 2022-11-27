@@ -1,16 +1,14 @@
-import { View, Text } from 'react-native'
 import React from 'react'
-// import { createNativeStackNavigator   } from '@react-navigation/stack';
-import { CardStyleInterpolators, createStackNavigator, TransitionSpecs } from '@react-navigation/stack';
+import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import TabNavigator from './TabNavigator';
 import ModalScreen from '../screens/ModalScreen';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import OrderScreen from '../screens/OrderScreen';
 
 
 export type RootStackParamList = {
     Main: undefined;
     MyModal: { userId: string; name: string }
-    Order: { order: any }
+    Order: { order: Order }
 }
 const RootStack = createStackNavigator<RootStackParamList>();
 
@@ -32,6 +30,10 @@ const RootNavigator = () => {
                         headerShown: false,
                         cardStyleInterpolator: CardStyleInterpolators.forBottomSheetAndroid
                     }} name='MyModal' component={ModalScreen} />
+                </RootStack.Group>
+
+                <RootStack.Group>
+                    <RootStack.Screen name='Order' component={OrderScreen}/>
                 </RootStack.Group>
 
             </RootStack.Navigator>
